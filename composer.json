@@ -10,7 +10,8 @@
         "twig/twig": "^2.11",
         "kint-php/kint": "^3.2",
         "monolog/monolog": "^1.24",
-        "nikic/fast-route": "^1.3"
+        "nikic/fast-route": "^1.3",
+        "php-di/php-di": "^6.0"
     }, 
     "autoload": {
         "psr-4": {
@@ -19,6 +20,6 @@
     },
     "scripts":
     {
-        "start":"php -S localhost:5002 -t=public"
+        "start":"php -S localhost:5006 -t=public"
     }
 }

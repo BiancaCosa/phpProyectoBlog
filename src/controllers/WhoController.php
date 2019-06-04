@@ -2,7 +2,7 @@
 namespace App\controllers;
  use App\ViewManager;
 
-class WhoControllers{
+class WhoController{
 
 
     public function index(){

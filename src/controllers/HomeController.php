@@ -1,9 +1,15 @@
 <?php
 namespace App\controllers;
  use App\ViewManager;
+ use DI\Container;
 
-class HomeControllers{
+class HomeController{
 
+    private $container;
+
+    public function __construct(Container $container){
+        $this->container =$container;
+    }
 
     public function index(){
         $viewManager = new ViewManager();
