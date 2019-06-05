@@ -20,6 +20,6 @@
     },
     "scripts":
     {
-        "start":"php -S localhost:5006 -t=public"
+        "start":"php -S localhost:5012 -t=public"
     }
 }

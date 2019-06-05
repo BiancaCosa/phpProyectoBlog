@@ -22,7 +22,6 @@ class RouterManager{
                 break;
         
             case \FastRoute\Dispatcher::FOUND:
-            
                 $controller =$route[1];
                 $method= $route[2];
                 $this->container->call($controller, $method);
