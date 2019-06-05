@@ -3,6 +3,7 @@ namespace App\controllers;
  use App\ViewManager;
  use DI\Container;
  use App\LogManager;
+ use App\DoctrineManager;
 
 abstract class Controller{
 
@@ -17,7 +18,7 @@ abstract class Controller{
         $this->logger->info("Clase ".get_class($this)." cargada");
     }
 
-    public abstract function index();
+    public abstract function index(DoctrineManager $doctrine);
        
 }
 
