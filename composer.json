@@ -25,6 +25,7 @@
     },
     "scripts":
     {
-        "start":"php -S localhost:5015 -t=public"
+        "start":"php -S localhost:5001 -t=public",
+        "kill": "lsof -n -i4TCP:5001 | grep LISTEN | awk '{ print $2 }' | xargs kill"
     }
 }

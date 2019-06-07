@@ -1,8 +1,8 @@
 <?php
-namespace App\controllers;
+namespace App\controllers\auth;
 use  App\DoctrineManager;
 use App\models\entities\User;
-use Kint;
+use App\controllers\Controller;
 
 class RegisterController extends Controller
 {

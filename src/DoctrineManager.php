@@ -5,17 +5,16 @@ use App\config\Config;
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 use Doctrine\Common\Annotations\AnnotationRegistry;
-use Kint;
 
 class DoctrineManager{
 
     private $container;
-    private $em;
+    public $em;
 
     public function __construct(Container $container){
         $this->container = $container;
         $dbconfig= Config::getDB();
-        $path=[
+        $paths=[
             dirname(__DIR__).'/models/entities',
             dirname(__DIR__).'/models/repositories'
         ];
