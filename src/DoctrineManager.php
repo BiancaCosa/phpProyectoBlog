@@ -5,6 +5,7 @@ use App\config\Config;
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Kint;
 
 class DoctrineManager{
 
@@ -15,11 +16,11 @@ class DoctrineManager{
         $this->container = $container;
         $dbconfig= Config::getDB();
         $path=[
-            dirname((__DIR__).'/models/entities'),
-            dirname((__DIR__).'/models/repositories')
+            dirname(__DIR__).'/models/entities',
+            dirname(__DIR__).'/models/repositories'
         ];
         $isDevMode=true;
-        $config= Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, null, null, false);
+        $config= Setup::createAnnotationMetadataConfiguration($paths,$isDevMode,null,null,false);
         AnnotationRegistry::registerLoader('class_exists');
         $this->em=EntityManager::create($dbconfig, $config);
     }
