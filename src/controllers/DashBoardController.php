@@ -1,7 +1,7 @@
 <?php
 namespace App\controllers;
 
-class DashBoardController extends controller {
+class DashBoardController extends Controller {
 
     public function index(){
 

@@ -1,6 +1,6 @@
 <?php
 namespace App\controllers\auth;
-use  App\DoctrineManager;
+use App\DoctrineManager;
 use App\models\entities\User;
 use App\controllers\Controller;
 
@@ -8,7 +8,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-       $this->viewManager->renderTemplate("register.view.html");
+       $this->viewManager->renderTemplate('\auth\register.view.html');
     }
     public function register(DoctrineManager $doctrine)
     {
