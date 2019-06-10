@@ -14,7 +14,7 @@ class RegisterController extends Controller
     {
         $name = $_POST['name'];
         $email= $_POST['email'];
-        $password = $_POST['passwd'];
+        $password = $_POST['passwrd'];
        
         $user = new User();
         $user->name = $name;
@@ -23,5 +23,8 @@ class RegisterController extends Controller
         $doctrine->em->persist($user);
         $doctrine->em->flush();
         
+    }
+    public function redirect(){
+        $this->viewManager->renderTemplate('index.view.html');
     }
 }

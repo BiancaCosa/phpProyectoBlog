@@ -3,7 +3,7 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class UserSeed extends AbstractSeed
+class UserSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -19,10 +19,10 @@ class UserSeed extends AbstractSeed
         $data= [];
         for($i=0; $i<10; $i++){
             $data[]=[
-                'name'=>$faker->name,
-                'email'=>$faker->email,
-                'password'=>sha1($faker->password),
-                'created_at'=>date('Y-m-d H:i:s')
+                'name'      => $faker->name,
+                'email'     => $faker->email,
+                'password'  => sha1($faker->password),
+                'created_at'=> date('Y-m-d H:i:s')
             ];
     }
     $this->insert('users', $data);
