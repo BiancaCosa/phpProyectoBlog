@@ -2,18 +2,20 @@
 namespace App\services;
 use App\DoctrineManager;
 use App\database\models\entities\Post;
-use Kint;
 
 class PostService{
 
 
 private $doctrine;
     public function __construct(DoctrineManager $doctrine){
-        $this->doctrine = $doctrine;
+        $this->repository = $doctrine->em->getRepository(Post::class);
     }
 
     public function getPost(){
-        $em = $this->doctrine->em->getRepository(Post::class);
-        return $repository->findAll();
+        return $this->repository->findAll();
+    }
+
+    public function getPostsByIdUser(int $id){
+        return $this->repository->findByIdUSer($id);
     }
 }

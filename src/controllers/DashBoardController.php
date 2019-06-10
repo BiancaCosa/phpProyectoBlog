@@ -1,12 +1,14 @@
 <?php
 namespace App\controllers;
+use App\services\USersService;
+use App\services\PostsService;
 
-class DashBoardController extends Controller {
+class DashBoardController extends ControllerAuth {
 
     public function index(){
-
-        $user=$this->sessionManager->get('user');
-        if (!$user) return $this->redirectTo('login');
-        $this->viewManager->renderTemplate('dashboard.view.html', ['user'=>$user]);
+        
+        $PostsService=$this->container->get(PostsService::class);
+        $posts = $PostsService->getPostsByIdUser($id);
+        $this->viewManager->renderTemplate('dashboard.view.html',['user'=>$user->email, 'posts'=>$posts]);
     }
 }

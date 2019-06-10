@@ -20,13 +20,13 @@ class PostSeeder extends AbstractSeed
         for ($i = 0; $i < 10; $i++) {
             $data[] = [
                 'title'      => $faker->word,
-                'body'       => $faker->text(250),
-                'id_user'    => 1,
+                'body'       => $faker->text(100),
+                'idUser'    => 1,
                 'created_at' => date('Y-m-d H:i:s')
             ];
         }
 
-        $this->table('posts')->insert($data);
+        $this->insert('posts',$data);
     
     }
 }

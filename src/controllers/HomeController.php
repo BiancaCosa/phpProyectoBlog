@@ -1,8 +1,7 @@
 <?php
 namespace App\controllers;
-use App\services\Postservice;
+use App\services\PostsService;
 use App\models\entities\Post;
-
 
 
 class HomeController extends Controller {
