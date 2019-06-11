@@ -13,6 +13,7 @@ abstract class ControllerAuth
     protected $viewManager;
     protected $logger;
     protected $sessionManager;
+    protected $user;
 
     public function __construct(Container $container)
     {
@@ -35,9 +36,9 @@ abstract class ControllerAuth
     public function auth(){
         $usersService =$this->container->get(UsersService::class);
         $id=$this->sessionManager->get('user');
-        if(!$id) return $this->redirectTo('login');
+        if(!$id) return $this->redirectTo('login'); 
         $this->$user=$UsersService->getUserById($id);
-        if (!$user) return $this->redirectTo('login');
+        if(!$this->user) return $this->redirectTo('login');
     }
 }
 

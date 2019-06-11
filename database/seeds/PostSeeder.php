@@ -15,18 +15,16 @@ class PostSeeder extends AbstractSeed
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
-        $data = [];
-        for ($i = 0; $i < 10; $i++) {
-            $data[] = [
-                'title'      => $faker->word,
-                'body'       => $faker->text(100),
-                'idUser'    => 1,
-                'created_at' => date('Y-m-d H:i:s')
+        $faker= Faker\Factory::create();
+        $data=[];
+        for($i=0;$i<10;$i++){
+            $data[]=[
+                'title'=> $faker->word,
+                'body'=> $faker->text(250),
+                'idUser'=> $faker->randomNumber,
+                'created_at'=>date('Y-m-d H:i:s')
             ];
-        }
-
+        } 
         $this->insert('posts',$data);
-    
     }
 }

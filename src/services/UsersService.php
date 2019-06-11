@@ -12,7 +12,7 @@ class UserService{
 
     public function getUserById(int $id):User{
         $em = $this->doctrine->em->getRepository(User::class);
-        return $repository->find();
+        return $repository->find($id);
     }
 }
 

@@ -2,15 +2,12 @@
 namespace App\controllers;
 use App\services\PostsService;
 use App\models\entities\Post;
-
-
-class HomeController extends Controller {
-
+use Kint;
+class HomeController extends Controller
+{
     public function index(){
-
-        $PostsService=$this->container->get(PostsService::class);
-        $PostsService->getPosts();
-        $this->viewManager->renderTemplate('index.view.html', ['posts'=>$posts]);
+        $PostsService = $this->container->get(PostsService::class);
+        $posts= $PostsService->getPosts();
+        $this->viewManager->renderTemplate("index.view.html",['posts'=>$posts]);
     }
 }
-

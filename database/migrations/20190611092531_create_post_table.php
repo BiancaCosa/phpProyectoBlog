@@ -37,6 +37,7 @@ class CreatePostTable extends AbstractMigration
         $posts->addColumn('idUser','integer');
         $posts->addColumn('created_at','datetime');
         $posts->addColumn('updated_at','datetime',['null'=>true]);
-        $posts->create();
+        $posts->create(); 
+
     }
 }
